@@ -1,0 +1,11 @@
+{
+  "generator-teams": {
+    "promptValues": {
+      "developer": "Avanade",
+      "unitTestsEnabled": true,
+      "useAzureAppInsights": false
+    },
+    "libraryName": "csr",
+    "generator-version": "2.11.1"
+  }
+}
