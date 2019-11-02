@@ -36,7 +36,7 @@ gulp manifest
 
 ## Configuration
 
-Configuration is stored in the `.env` file. 
+Configuration is stored in the `.env` file.
 
 ## Debug and test locally
 
@@ -70,7 +70,7 @@ To step through code in Visual Studio Code you need to add the following snippet
 
 ### Using ngrok for local development and hosting
 
-In order to make development locally a great experience it is recommended to use [ngrok](https://ngrok.io), which allows you to publish the localhost on a public DNS, so that you can consume the bot and the other resources in Microsoft Teams. 
+In order to make development locally a great experience it is recommended to use [ngrok](https://ngrok.io), which allows you to publish the localhost on a public DNS, so that you can consume the bot and the other resources in Microsoft Teams.
 
 To use ngrok, it is recommended to use the `gulp ngrok-serve` command, which will read your ngrok settings from the `.env` file and automatically create a correct manifest file and finally start a local development server using the ngrok settings.
 
@@ -92,7 +92,7 @@ This will automatically deploy your files to Azure, download the npm pacakges, b
 3. Create a new *Web App* with Windows App Service Plan and give it the name of your tab, the same you used when asked for URL in the Yeoman generator. In your case https://csr.azurewebsites.net.
 4. Add the following keys in the *Configuration* -> *Application Settings*; Name = `WEBSITE_NODE_DEFAULT_VERSION`, Value = `8.10.0` and Name = `SCM_COMMAND_IDLE_TIMEOUT`,  Value = `1800`. Click Save.
 5. Go to *Deployment Center*
-6. Choose *Local Git* as source and *App Service build service* as the Build Provider 
+6. Choose *Local Git* as source and *App Service build service* as the Build Provider
 7. Click on *Deployment Credentials* and store the App Credentials securely
 8. In your tab folder initialize a Git repository using `git init`
 9. Build the solution using `gulp build` to make sure you don't have any errors
@@ -116,3 +116,5 @@ SET DEBUG=msteams
 ```
 
 If you are using Microsoft Azure to host your Microsoft Teams app, then you can add `DEBUG` as an Application Setting with the value of `msteams`.
+# hackateams
+Created repository for Hacka Teams contest
