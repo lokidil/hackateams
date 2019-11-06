@@ -33,6 +33,13 @@ export interface ICsrDemoTabProps extends ITeamsBaseComponentProps {
  * Implementation of the CSRDemo Tab content page
  */
 export class CsrDemoTab extends TeamsBaseComponent<ICsrDemoTabProps, ICsrDemoTabState> {
+    public pWidth = {
+        width: "600px"
+      };
+
+      public pSpace = {
+        margin: "10px"
+      };
 
     private volunteer: any;
     // public constructor(props: ICsrDemoTabProps, setState: ICsrDemoTabState) {
@@ -72,6 +79,12 @@ export class CsrDemoTab extends TeamsBaseComponent<ICsrDemoTabProps, ICsrDemoTab
             fontSize: this.pageFontSize()
         });
 
+        this.setState({
+            name: "Akash",
+            timevoulunteered: "61",
+            eventattended: "12"
+        });
+
         // fetch("https://csrservice.azurewebsites.net/api/GetVolunteerDetails?code=id")
         //   .then(res => res.json())
         //   .then(
@@ -100,7 +113,7 @@ export class CsrDemoTab extends TeamsBaseComponent<ICsrDemoTabProps, ICsrDemoTab
                 entityId: "This is not hosted in Microsoft Teams"
             });
         }
-        this.Volunteer();
+        // this.Volunteer();
     }
     /**
      * The render() method to create the UI of the tab
@@ -132,32 +145,57 @@ export class CsrDemoTab extends TeamsBaseComponent<ICsrDemoTabProps, ICsrDemoTab
                             </div>
                             <div>
                                 <table>
-                                    <tr>
+                                <tr>
                                         <th>
                                             Welcome {this.state.name}
                                         </th>
-                                    </tr>
-                                    <tr>
                                         <th>
-                                            Time Volunteered
-                                    </th>
-                                        <th>
-                                            {this.state.timevoulunteered}
+                                            <div style={styles.header}>Upcoming Events </div>
                                         </th>
                                     </tr>
                                     <tr>
+                                        <td>
+                                        <img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSV7lIecvw-fTzdga4StzyUKLNl6Fzilpu61R5DOwJeEcsHux7-" ></img> </td>
+
+                                        <td style= {this.pWidth}>
+                                            <div>ATCI: MV: ZOONIVERSE: ACCENTURE INTERNAL</div>
+                                            <div><img height="200px" width ="300px" src ="https://d20y2quocgjv6o.cloudfront.net/client_data/accentureglobal.benevity.org/files/imagecache/wpg_1080x250/userfile-5d42b3262824a7.09365597.jpg"></img>
+                                            <span className="cardView">An exciting opportunity to volunteer virtually at your comfort, Zooniverse opens up for a lot of visual analytics and scientific exploration. Come on; Grab a seat to get to know more about this micro volunteering event.</span></div>
+                                            <div><span><PrimaryButton onClick={() => alert("It worked!")}>Register</PrimaryButton><span style={this.pSpace}><PrimaryButton onClick={() => alert("It worked!")}>Track Time</PrimaryButton></span></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Time Volunteered: {this.state.timevoulunteered}
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Event Attended: {this.state.eventattended}
+                                    </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            {/* <div>
+                                <table>
+                                <tr>
                                         <th>
-                                            Event Attended
-                                    </th>
-                                        <th>
-                                            {this.state.eventattended}
+                                            <div style={styles.header}>Upcoming Events </div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                    <th>
+                                            <div>ATCI: MV: ZOONIVERSE: ACCENTURE INTERNAL</div>
+                                            <img height="200px" width ="200px" src ="https://d20y2quocgjv6o.cloudfront.net/client_data/accentureglobal.benevity.org/files/imagecache/wpg_1080x250/userfile-5d42b3262824a7.09365597.jpg"></img>
+                                            <div>An exciting opportunity to volunteer virtually at your comfort, Zooniverse opens up for a lot of visual analytics and scientific exploration. Come on; Grab a seat to get to know more about this micro volunteering event.</div>
+                                            <div><PrimaryButton onClick={() => alert("It worked!")}>Register</PrimaryButton><PrimaryButton onClick={() => alert("It worked!")}>Track Time</PrimaryButton></div>
                                         </th>
                                     </tr>
                                 </table>
                             </div>
                             <div style={styles.section}>
                                 <PrimaryButton onClick={() => alert("It worked!")}>A sample button</PrimaryButton>
-                            </div>
+                            </div> */}
                         </PanelBody>
                         <PanelFooter>
                             <div style={styles.footer}>
